@@ -19,7 +19,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/hola/{name}/", name="default_testing")     
+     * @Route("/hola/{name}", name="default_testing")     
      * @Template()
      */
     
