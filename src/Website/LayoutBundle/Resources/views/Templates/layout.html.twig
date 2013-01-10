@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        {%stylesheets '@WebsiteLayoutBundle/Resources/public/css/*.min.css' output='css/bootstrap.css'%}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {%endstylesheets%}
+        <style>
+          @media(min-width:1024px)
+          {
+            body {
+              padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+            }
+          }
+        </style>
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container">
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+              <a class="brand" href="#">Project name</a>
+              <div class="nav-collapse collapse">
+                <ul class="nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+              </div><!--/.nav-collapse -->
+            </div>
+          </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="span3">
+                    <div class="well">Sidebar</div>
+                </div> 
+                <div class="span9">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    {% block javascripts %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,7 @@
+parameters:
+#    website_layout.example.class: Website\LayoutBundle\Example
+
+services:
+#    website_layout.example:
+#        class: %website_layout.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
